@@ -45,3 +45,22 @@ let operator = null;
 let result = operate(firstValue, secondValue, operator);
 console.log(result);
 
+const display = document.getElementById('display');
+const digitButtons = document.querySelectorAll('.digit');
+
+let currentInput = '';
+
+digitButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const digit = button.textContent;
+
+    // Prevent leading 0s like 0001
+    if (currentInput === '0') {
+      currentInput = digit;
+    } else {
+      currentInput += digit;
+    }
+
+    display.textContent = currentInput;
+  });
+});
