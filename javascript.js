@@ -56,6 +56,9 @@ digitButtons.forEach(button => {
 const clearButton = document.querySelector('#clear');
 
 clearButton.addEventListener('click', () => {
+   firstValue = null;
+  secondValue = null;
+  currentOperator = null;
   currentInput = '';
   display.textContent = '0';
 });
